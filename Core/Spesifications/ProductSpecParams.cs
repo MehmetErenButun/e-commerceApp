@@ -18,11 +18,11 @@ namespace Core.Spesifications
         public int? brandId {get; set;}
         public int? typeId {get; set;}
         public string sort{get;set;}
-        private string _searh;
+        private string _search;
         public string Search
         {
-            get => _searh;
-            set => _searh.ToLower();
+            get => _search;
+            set => _search.ToLower();
         }
 
 
