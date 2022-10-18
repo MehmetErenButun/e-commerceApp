@@ -2,17 +2,18 @@
   <div class="row">
     <section class="col-3">
       <h5 class="text-warning me-3" >Sırala</h5>
-      <select style="width:300px ;"  class="custom-select mb-3">
-        <option selected>Alfabetik</option>
-        <option >Fiyat : Azalan</option>
-        <option >Fiyat : Artan</option>
-      </select>
+      <select style="width:300px ;"  
+      class="custom-select mb-3"
+      (change)="onSortSelected($event.target.value)"
+      > 
+      <option *ngFor="let item of sortOptions" [value]="item.value"> {{item.name}} </option>
+    </select>
 
 <h5 class="text-warning my-3">Brands</h5>
   <ul class="list-group">
     <li class="list-group-item" 
     *ngFor="let item of brands"
-    [class.active]="item.id===this.brandSelectedId"
+    [class.active]="item.id===shopParams.brandSelectedId"
     [value]="item.id"
     (click)="onBrandSelected(item.id)"
     >{{item.name}}</li>
@@ -22,7 +23,7 @@
   <ul class="list-group">
     <li class="list-group-item" 
     *ngFor="let item of types"
-    [class.active]="item.id===this.typeSelectedId"
+    [class.active]="item.id===shopParams.typeSelectedId"
     [value]="item.id"
     (click)="onTypeSelected(item.id)"
     
@@ -32,20 +33,28 @@
     </section>
     <section class="col-9">
       <div class="d-flex justify-content-between align-items-center pb-2">
-        <header>
-          <span> <strong>16</strong> Sonuçtan <strong>10</strong> Gösteriliyor </span>
-        </header>
+        <app-paging-header 
+        [totalCount]="totalCount"
+        [pageSize]="this.shopParams.pageSize"
+        [pageNumber]="this.shopParams.pageNumber"
+        
+        ></app-paging-header>
         <div class="form-inline mt-2">
-          <input type="text" class="form-control" style="width:300px;" placeholder="Ara">
-          <button class="btn btn-outline-primary my-2">Ara</button>
-          <button class="btn btn-outline-success my-2">Yenile</button>
+          <input (keyup.enter)="onSearch()" type="text" #search class="form-control me-3" style="width:300px; display: inline;" placeholder="Ara">
+          <button (click)="onSearch()" class="btn btn-outline-primary me-2 mb-1">Ara</button>
+          <button (click)="onReset()" class="btn btn-outline-success me-2 mb-1">Yenile</button>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mb-3">
         <div class="col-4" *ngFor="let item of products">
        <app-product-item [product]="item" ></app-product-item>
       </div>
       </div>
+      <app-pager
+      [pageSize]="this.shopParams.pageSize"
+      [totalCount]="this.totalCount"
+      (pageChanged)="this.onPageChanged($event)"
+      ></app-pager>
     </section>
   </div>
 </div>

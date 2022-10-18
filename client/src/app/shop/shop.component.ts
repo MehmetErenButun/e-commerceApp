@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,ElementRef } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
 import { IType} from '../shared/models/ProductType';
+import { ShopParams } from '../shared/models/shopParams';
 import { ShopService } from './shop.service';
 
 @Component({
@@ -10,11 +11,18 @@ import { ShopService } from './shop.service';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
+  @ViewChild('search',{static:false}) 
+  searchTerm : ElementRef
   products : IProduct[];
-  brands : IBrand[]
-  types : IType[]
-  brandSelectedId : number;
-  typeSelectedId : number;
+  brands : IBrand[];
+  types : IType[];
+  shopParams = new ShopParams();
+  totalCount : number;
+  sortOptions = [
+    {name:'Alfabetik',value:"name"},
+    {name:'Artan',value:"priceAsc"},
+    {name:'Azalan',value:"priceDesc"},
+  ];
 
   constructor(private shopService : ShopService) { }
 
@@ -22,12 +30,14 @@ export class ShopComponent implements OnInit {
    this.getProduct();
    this.getBrand();
    this.getType();
-
   };
 
   getProduct(){
-    this.shopService.getProducts(this.brandSelectedId,this.typeSelectedId).subscribe(response=>{
+    this.shopService.getProducts(this.shopParams).subscribe(response=>{
       this.products = response.data;
+      this.shopParams.pageSize = response.pageSize;
+      this.shopParams.pageNumber = response.pageIndex;
+      this.totalCount = response.count;
     },error=>{
       console.log(error);
     });
@@ -43,20 +53,45 @@ export class ShopComponent implements OnInit {
 
   getType(){
     this.shopService.getTypes().subscribe(response=>{
-      this.types=this.types=[{id:0,name:"Hepsi"},...response];
+      this.types=[{id:0,name:"Hepsi"},...response];
     },error=>{
       console.log(error);
     });
   };
 
   onBrandSelected(brandId:number){
-    this.brandSelectedId = brandId;
+    this.shopParams.brandSelectedId = brandId;
+    this.shopParams.pageNumber=1;
     this.getProduct();
   };
 
   onTypeSelected(typeId:number){
-    this.typeSelectedId=typeId;
+    this.shopParams.typeSelectedId=typeId;
+    this.shopParams.pageNumber=1;
     this.getProduct();
+  }
+
+  onSortSelected(sort:string){
+    this.shopParams.sortSelected=sort;
+    this.getProduct();
+  }
+
+  onPageChanged(event:any){
+    this.shopParams.pageNumber=event.page;
+    this.getProduct();
+  }
+
+  onSearch(){
+    this.shopParams.search = this.searchTerm.nativeElement.value;
+    this.shopParams.pageNumber=1;
+    this.getProduct();
+  }
+
+  onReset(){
+    this.searchTerm.nativeElement.value = '';
+    this.shopParams = new ShopParams();
+    this.getProduct();
+
   }
 
 }
