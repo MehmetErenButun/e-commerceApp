@@ -10,3 +10,12 @@
     top: -12px;
     right: 32px;
 }
+
+a{
+    cursor: pointer;
+    color: black;
+
+    &.active{
+        color: blueviolet;
+    }
+}

@@ -1,10 +1,10 @@
-<div  class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 border-bottom shadow-sm fixed-top bg-white ">
-   <img src="/assets/images/logo.png" style="max-height: 70px;" alt="logo">
+<div  class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 border-bottom shadow-sm fixed-top bg-white">
+   <img src="/assets/images/logo.png" routerLink="/"  style="max-height: 70px; cursor: pointer;" alt="logo">
 
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Anasayfa</a>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Mağaza</a>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Destek</a>
+      <a class="me-3 py-2  text-decoration-none" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Anasayfa</a>
+      <a class="me-3 py-2  text-decoration-none" routerLink="/shop" routerLinkActive="active">Mağaza</a>
+      <a class="me-3 py-2  text-decoration-none" href="#">Destek</a>
     </nav>
     
     <div class="d-flex align-items-center">
