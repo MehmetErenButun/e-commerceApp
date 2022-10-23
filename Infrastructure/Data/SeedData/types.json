@@ -1,18 +1,18 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "Elektro Gitar"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Akustik Gitar"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Bas Gitar"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "Klasik Gitar"
   }
 ]
