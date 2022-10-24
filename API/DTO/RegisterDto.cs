@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,8 +8,15 @@ namespace API.DTO
 {
     public class RegisterDto
     {
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
+
+        [Required]
         public string DisplayName { get; set; }
+
+        [Required]
+        [RegularExpression("(?=^.{6,10}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\\s).*$",ErrorMessage ="Şifreniz en az 6 karakter olmalı ve en az 1 büyük harf,1 sayı,1 sembol bulundurmalıdır")]
         public string Password { get; set; }
     }
 }
