@@ -1,0 +1,24 @@
+<body class="text-center mt-5">
+    
+    <main class="form-signin w-100 m-auto">
+      <form [formGroup]="this.register" (ngSubmit)="this.onSubmit()">
+        <h1 class="h3 mb-3 fw-normal">Lütfen Kayıt Olun</h1>
+        
+        <app-text-input formControlName="displayName" [label]="'Kullanıcı Adınız'" ></app-text-input>
+        <app-text-input formControlName="email" [label]="'Email adresiniz'" ></app-text-input>
+        <app-text-input formControlName="password" [label]="'Şifreniz'" [type]="'password'" ></app-text-input>
+        
+        <ul class="text-danger" *ngIf="errors">
+            <li *ngFor="let item of errors">{{item}}</li>
+        </ul>
+        
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Beni Hatırla
+          </label>
+        </div>
+        <button  class="w-100 btn btn-lg btn-primary" type="submit">Kayıt</button>
+        <p class="mt-5 mb-3 text-muted">&copy;2022</p>
+      </form>
+    </main>
+      </body>

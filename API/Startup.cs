@@ -34,8 +34,8 @@ namespace API
             services.AddSwaggerDocumentation();
             services.AddIdentityServices(_config);
             services.AddAutoMapper(typeof(MappingProfile));
-            services.AddApplicationServices();
             services.AddControllers();
+            services.AddApplicationServices();
             services.AddDbContext<AppIdentityDbContext>(x=>{
                 x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
             });
