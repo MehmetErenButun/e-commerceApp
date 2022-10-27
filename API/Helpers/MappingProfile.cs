@@ -22,6 +22,15 @@ namespace API.Helpers
             CreateMap<CustomerBasketDto,CustomerBasket>();
             CreateMap<BasketItemDto,BasketItem>();
             CreateMap<AdressDto,Core.Entities.OrderAggregate.Address>();
+            CreateMap<Core.Entities.OrderAggregate.Order, OrderToReturnDto>()
+            .ForMember(x=>x.DeliveryMethod, i=>i.MapFrom(o=>o.DeliveryMethod.ShortName))
+            .ForMember(x=>x.ShippingPrice,i=>i.MapFrom(o=>o.DeliveryMethod.Price));
+
+            CreateMap<Core.Entities.OrderAggregate.OrderItem, OrderItemDto>()
+            .ForMember(x=>x.ProductId,i=>i.MapFrom(o=>o.ItemOrdered.ProductItemId))
+            .ForMember(x=>x.ProductName,i=>i.MapFrom(i=>i.ItemOrdered.ProductName))
+            .ForMember(x=>x.PictureUrl,i=>i.MapFrom(o=>o.ItemOrdered.PictureUrl))
+            .ForMember(x=>x.PictureUrl,i=>i.MapFrom<OrderItemsUrlResolver>());
         }
 
 
