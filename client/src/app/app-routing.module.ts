@@ -26,6 +26,12 @@ const routes: Routes = [
     data: { breadcrumb: 'Not Found' },
   },
   {
+    path:'orders',
+    canActivate:[AuthGuard],
+    loadChildren: ()=>import('./order/order.module')
+    .then(mod=>mod.OrderModule),data:{breadcrumb:'Siparişler'}
+  },
+  {
     path: 'shop',
     loadChildren: () =>
       import('./shop/shop.module').then((mod) => mod.ShopModule),

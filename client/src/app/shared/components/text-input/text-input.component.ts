@@ -32,7 +32,7 @@ export class TextInputComponent implements OnInit,ControlValueAccessor {
   
   
   writeValue(obj: any): void {
-    this.input.nativeElement.value = obj = '';
+    this.input.nativeElement.value = obj || '';
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;

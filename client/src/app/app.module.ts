@@ -10,6 +10,8 @@ import { ErrorInterceptor } from './core/interceptor/error.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptor/loading.interceptor';
 import { BasketModule } from './basket/basket.module';
+import { JwtInterceptor } from './core/interceptor/jwt.interceptor';
+import { OrderModule } from './order/order.module';
 
 
 @NgModule({
@@ -24,10 +26,12 @@ import { BasketModule } from './basket/basket.module';
     CoreModule,
     HomeModule,
     NgxSpinnerModule,
+
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}
+    {provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

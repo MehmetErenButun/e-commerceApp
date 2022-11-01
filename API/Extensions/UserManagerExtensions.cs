@@ -13,14 +13,14 @@ namespace API.Extensions
     {
         public static async Task<AppUser> FindByUserByClaimsWithAdressAsyn(this UserManager<AppUser> input, ClaimsPrincipal user )
         {
-            var email = user.FindFirstValue(ClaimTypes.Email);
+           var email = user?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
 
             return await input.Users.Include(x=>x.Adress).SingleOrDefaultAsync(x=>x.Email==email);
         }
 
         public static async Task<AppUser>FindByEmailFromClaims(this UserManager<AppUser> input,ClaimsPrincipal user)
         {
-             var email = user.FindFirstValue(ClaimTypes.Email);
+             var email = user?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
 
              return await input.Users.SingleOrDefaultAsync(x=>x.Email==email);
         }

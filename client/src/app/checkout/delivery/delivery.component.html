@@ -1,9 +1,10 @@
 <div class="mt-4" [formGroup]="checkoutForm">
     <div class="row" formGroupName="deliveryForm">
-        <div class="col-6 form-group" *ngFor="let item of deliveryMethod">
+        <div class="col-6 form-group" *ngFor="let item of deliveryMethods">
             <input type="radio" 
             class="custom-control-input"
             id={{item.id}}
+            (click)="setShipping(item)"
             value={{item.id}}
             formControlName="deliveryMethod">
             <label for="{{item.id}}" class="custom-control-label">
@@ -13,4 +14,12 @@
             </label>
         </div>
     </div>
+</div>
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5 mt-3">
+    <button class="btn btn-outline-primary" cdkStepperPrevious  >
+        <i class="fa fa-angle-left"></i> Adres Bilgilerine Dön
+    </button>
+    <button class="btn btn-primary" cdkStepperNext>
+        Devam Et <i class="fa fa-angle-right"></i> 
+    </button>
 </div>

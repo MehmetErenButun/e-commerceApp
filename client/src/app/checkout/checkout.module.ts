@@ -8,6 +8,7 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { ReviewComponent } from './review/review.component';
 import { PaymentComponent } from './payment/payment.component';
 import { SuccessComponent } from './success/success.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,7 +24,8 @@ import { SuccessComponent } from './success/success.component';
   imports: [
     CommonModule,
     CheckoutRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports:[
     CheckoutComponent

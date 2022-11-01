@@ -2,7 +2,7 @@
   {
     "Name": "Gibson Les Paul Studio Elektro Gitar (Wine Red)",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 42.842,
+    "Price": 42230,
     "PictureUrl": "images/products/gibsone1.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
@@ -10,7 +10,7 @@
   {
     "Name": "Gibson Les Paul Classic Elektro Gitar (Ebony)",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 66.599,
+    "Price": 66599,
     "PictureUrl": "images/products/gibsone2.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
@@ -18,7 +18,7 @@
   {
     "Name": "Fender USA Performer Tele Elektro Gitar RW SSNB",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 41.979,
+    "Price": 41979,
     "PictureUrl": "images/products/fendere1.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 2
@@ -26,7 +26,7 @@
   {
     "Name": "Fender USA Performer Tele Elektro Gitar HUM RW",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 44.397,
+    "Price": 44397,
     "PictureUrl": "images/products/fendere2.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 2
@@ -34,7 +34,7 @@
   {
     "Name": "Jackson JS1X Dinky Minion Amaranth Klavye Pavo Purple Elektro Gitar",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 3.834,
+    "Price": 3834,
     "PictureUrl": "images/products/jacksone1.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 4
@@ -42,7 +42,7 @@
   {
     "Name": "Yamaha Pacifica PA112JYNS Elektro Gitar (Natural Satin)",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 7.526,
+    "Price": 7526,
     "PictureUrl": "images/products/yamahae1.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 5
@@ -50,7 +50,7 @@
   {
     "Name": "Fender CD-60S Dreadnought Ceviz Klavye Black Akustik Gitar",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 6.476,
+    "Price": 6476,
     "PictureUrl": "images/products/fenderk1.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 2
@@ -58,7 +58,7 @@
   {
     "Name": "YamahaF310 Akustik Gitar",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 4.574,
+    "Price": 4574,
     "PictureUrl": "images/products/yamahak1.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 5
@@ -66,7 +66,7 @@
   {
     "Name": "YamahaF370 Akustik Gitar",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 5.850,
+    "Price": 5850,
     "PictureUrl": "images/products/yamahak2.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 5
@@ -74,7 +74,7 @@
   {
     "Name": "Gibson SG Tribute Elektro Gitar (Vintage Cherry Satin)",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 48.170,
+    "Price": 48170,
     "PictureUrl": "images/products/gibsone3.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
@@ -82,7 +82,7 @@
   {
     "Name": "IBANEZ GRX20W-WH GRX Elektro Gitar",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 4.500,
+    "Price": 4500,
     "PictureUrl": "images/products/ibaneze1.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 3
@@ -90,7 +90,7 @@
   {
     "Name": "IBANEZ GRX40-MLB Elektro Gitar",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
-    "Price": 5.160,
+    "Price": 5160,
     "PictureUrl": "images/products/ibaneze2.jpg",
     "ProductTypeId": 1,
     "ProductBrandId":3
@@ -98,7 +98,7 @@
   {
     "Name": "Gibson J-45 Studio Walnut Elektro Akustik Gitar (Antique Natural)",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 63.563,
+    "Price": 63563,
     "PictureUrl": "images/products/gibsonk1.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 2
@@ -106,7 +106,7 @@
   {
     "Name": "Gibson Les Paul Standard '50s Solak Elektro Gitar (Heritage Cherry Sunburst)",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 75.657,
+    "Price": 75657,
     "PictureUrl": "images/products/gibsone4.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
@@ -114,7 +114,7 @@
   {
     "Name": "Yamaha TRBX304 Candy Apple Red Bas Gitar",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 13.231,
+    "Price": 13231,
     "PictureUrl": "images/products/yamahab1.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 5
@@ -122,7 +122,7 @@
   {
     "Name": "Yamaha TRBX305BL Black Bas Gitar",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14.299,
+    "Price": 14299,
     "PictureUrl": "images/products/yamahab2.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 5
@@ -130,7 +130,7 @@
   {
     "Name": "Cort AC200NAT Klasik Gitar",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
-    "Price": 4.978,
+    "Price": 4978,
     "PictureUrl": "images/products/cortk1.jpg",
     "ProductTypeId": 4,
     "ProductBrandId": 6
@@ -138,7 +138,7 @@
   {
     "Name": "Cort CEC1 Klasik Gitar",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
-    "Price": 4.445,
+    "Price": 4445,
     "PictureUrl": "images/products/cortk2.jpg",
     "ProductTypeId": 4,
     "ProductBrandId": 6

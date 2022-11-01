@@ -1,7 +1,7 @@
 export interface IAddress {
-    firstName: string;
-    lastName: string;
-    street: string;
-    city: string;
-    zipCode: string;
+    FirstName: string;
+    LastName: string;
+    Street: string;
+    City: string;
+    ZipCode: string;
 }

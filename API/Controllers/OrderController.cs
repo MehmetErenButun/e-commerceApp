@@ -8,10 +8,12 @@ using API.Extensions;
 using AutoMapper;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [Authorize]
     public class OrderController : BaseApiController
     {   
         private readonly IMapper _mapper;
@@ -22,11 +24,11 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<ActionResult<Order>> CreateOrder(OrderDto orderDto)
         {
             var email = HttpContext.User.RetrieveEmail();
-            var address = _mapper.Map<AdressDto,Address>(orderDto.ShipToAdress);
+            var address = _mapper.Map<AdressDto,Address>(orderDto.ShipToAddress);
             var order = await _orderService.CreateOrderAsync(email,orderDto.DeliveryMethodId,orderDto.BasketId,address);
 
             if(order==null) return BadRequest(new ApiResponse(400,"propblem"));
@@ -40,12 +42,13 @@ namespace API.Controllers
         {
             var email = HttpContext.User.RetrieveEmail();
             var orders = await _orderService.GetOrdersForUserAsync(email);
-            return Ok(_mapper.Map<IReadOnlyList<Order>,IReadOnlyList<OrderDto>>(orders));
+            var ordersToDto = _mapper.Map<IReadOnlyList<Order>,IReadOnlyList<OrderToReturnDto>>(orders);
+            return Ok(ordersToDto);
         }
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<OrderDto>> GetOrderByUserId(int id)
+        public async Task<ActionResult<OrderToReturnDto>> GetOrderByUserId(int id)
         {
             var email = HttpContext.User.RetrieveEmail();
 
@@ -53,7 +56,7 @@ namespace API.Controllers
 
             if(order==null) return NotFound(new ApiResponse(404));
 
-            return Ok(_mapper.Map<Order,OrderDto>(order));
+            return Ok(_mapper.Map<Order,OrderToReturnDto>(order));
         }
 
         [HttpGet("deliveryMethods")]
